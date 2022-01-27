@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Text Questions {% endblock %}
+{% block content %}
+
+
+<h2 class="my-4">Set : <span class="text-primary">{{category.section}} </span></h2>
+
+
+
+    
+    <img src="{{question.image.url}}" width="500"></img>
+    <form action="{% url 'submitAns1' category.id question.id %}" method="post">
+        {% csrf_token %}
+        
+        <div class="card-body">
+        
+         {% for op in option %}
+        
+    
+    <label>
+        <li class="list-group-item">
+            
+            <input class="form-check-input me-1" type="radio" name='choice' value="{{op.id}}" >
+            {{op.option}}
+            
+          </li>
+    </label>
+    
+    {% endfor %}
+    <br>
+    
+        
+       
+    
+
+    </div>
+
+    <div class="card-footer">
+        <input type="submit" name="submit"  value="Submit" class="btn btn-primary submitBtn" >
+        
+    </div>
+ </form>
+</div>
+
+
+{% endblock %}
