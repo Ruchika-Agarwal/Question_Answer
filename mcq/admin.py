@@ -3,11 +3,11 @@ from django.contrib import admin
 from .models import Question_Set, Question, Options
 # Register your models here.
 
-admin.site.register(Question_Set)
-admin.site.register(Question)
-admin.site.register(Options)
+#admin.site.register(Question_Set)
+#admin.site.register(Question)
+#admin.site.register(Options)
 
-'''
+
 from django.contrib import admin
 
 from .models import Question
@@ -36,4 +36,3 @@ class QuestionSetAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Question_Set, QuestionSetAdmin)
-'''
